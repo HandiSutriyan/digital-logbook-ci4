@@ -20,8 +20,8 @@
 			</a>
         </div>
         <div class="col-md-6 menu-item">
-			<a href="<?= base_url('/') ?>">
-				<div class="card ">
+			<a href="<?= base_url('/number') ?>">
+				<div class="card">
 					<img class="card-img-top" src="assets/images/teknisi.jpg">
 					<div class="card-body">
 					<h2 class="card-text text-center">Teknisi</h2>

@@ -14,8 +14,27 @@
 .konten {
     padding: 20px;
 }
+.login{
+    margin: auto;
+    position: absolute;
+    background-color: #E5E5E5;
+    border-radius: 15px;
+    top: 0; left: 0; bottom: 0; right: 0;
+    width: 50%; 
+    height: 70%;
+    min-width: 200px;
+    max-width: 400px;
+    padding: 40px;
+}
 .card {
     border-radius: 20px;
+}
+.ilustrasi{
+    width: 50%;
+    margin: auto;
+}
+.ilustrasi table{
+    margin-top: 20px;
 }
 .menu{
     width: 70%;

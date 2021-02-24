@@ -14,7 +14,7 @@ class UserSeeder extends Seeder
                         'user_nip' => '20210112345678',
                         'user_email'    => 'admin@kalibrasi.com',
                         'user_role' => 'admin',
-                        'user_password' => md5('admin'),
+                        'user_password' => password_hash('admin', PASSWORD_DEFAULT),
                         'created_at' => Time::now(),
                         'updated_at' => Time::now()
                 ];

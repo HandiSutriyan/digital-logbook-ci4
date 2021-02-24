@@ -1,33 +1,43 @@
-<?= $this->extend('layout/template') ?>
+<?= $this->extend('layout/admin-template') ?>
 
-<?= $this->section('konten') ?>
-<div class="container konten">
-    <div class="row">
-        <div class="col-md-12">
-            <h1 class="text-center">Selamat Datang!</h1>
-            <p class="text-center">Silakan pilih aktifitas Anda</p>
-        </div>
-    </div>
-    <div class="row menu">
-        <div class="col-md-6 menu-item">
-            <div class="card">
-                <img class="card-img-top" src="assets/images/admin.jpg">
-                <div class="card-body">
-                <h2 class="card-text text-center">Admin</h2>
+<?= $this->section('content') ?>
+
+    <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Kebumen PTK Expo Data Center</h4>
+                                <p class="category">Pusat Pengolahan Data Kebumen PTK Expo 2020</p>
+                            </div>
+                            <div class="content">
+                                <hr>
+                                <div class="container-fluid">
+                                <div class="row">
+                                        <div class="col-md-4">
+                                            <h5>Data Total Acara</h5>
+                                            <h2 class="title">///</h2>
+                                            <span class="category">butir acara</span>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h5>Data PTK</h5>
+                                            <h2 class="title">///</h2>
+                                             <span class="category">PTK</span>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h5>Data PTK</h5>
+                                            <h2 class="title">///</h2>
+                                             <span class="category">stand PTK</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-6 menu-item">
-            <div class="card ">
-                <img class="card-img-top" src="assets/images/teknisi.jpg">
-                <div class="card-body">
-                <h2 class="card-text text-center">Teknisi</h2>
-                </div>
-            </div>
-        </div>
     </div>
-</div>
-    
 
 <?= $this->endSection() ?>
 

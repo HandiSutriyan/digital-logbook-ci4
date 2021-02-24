@@ -18,7 +18,7 @@
     <nav class="navbar navbar-expand-lg navbar-light header">
       <div class="container">
         <a class="navbar-brand" href="<?= base_url('/') ?>">
-          <img class="navbar-brand brand-logo" src="assets/images/bmkg.png">
+          <img class="navbar-brand brand-logo" src="<?= base_url('assets/images/bmkg.png')?>">
           <span class="d-xs-none">Logbook Digital</span>
         </a>
         </div>

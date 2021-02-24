@@ -29,6 +29,9 @@
 .card {
     border-radius: 20px;
 }
+.alert{
+    margin-top: 10px;
+}
 .ilustrasi{
     width: 50%;
     margin: auto;
@@ -55,4 +58,14 @@
 }
 .footer  small{
     margin-top: 10px;
+}
+
+@media (max-width: 700) {
+    .ilustrasi{
+        width:100%;
+        margin: 10px;
+    }
+    .card-text {
+        font-size: 0.75rem;
+    }
 }

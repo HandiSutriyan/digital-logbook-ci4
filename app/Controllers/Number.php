@@ -14,16 +14,28 @@ class Number extends BaseController
     }
     public function index()
 	{
-        $kode = $this->request->getVar('kode_pinjam');
-        $riwayat = $this->riwayatModel->search($kode);
-        dd($riwayat);
 
-        
         $data =[
             'title' => 'Cek Data',
-            'data_alat'=>''
+            'riwayat'=> '' 
         ];
-		return view('pages/number-input', $data);
+        return view('pages/number-input', $data);
+    }
+    public function cari(){
+        $session = session();
+        $kode = $this->request->getVar('kode_pinjam');
+        $riwayat = $this->riwayatModel->search($kode);
+        $data =[
+            'title' => 'Cek Data',
+            'riwayat'=> $riwayat 
+        ];
+        //d($riwayat);
+        if($riwayat){
+            return view('pages/number-input', $data);
+        }else {
+            $session->setFlashdata('msg', 'Data tidak ditemukan');
+            return redirect()->to('/number');
+        }
     }
     
 }

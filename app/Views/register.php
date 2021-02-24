@@ -29,11 +29,16 @@
                     </div>
                     <div class="mb-3">
                         <label for="InputForName" class="form-label">NIP</label>
-                        <input type="text" name="user_nip" class="form-control" id="InputForName" value="<?= set_value('user_nip') ?>">
+                        <input type="text" name="user_nip" class="form-control" id="InputForNIP" value="<?= set_value('user_nip') ?>">
                     </div>
                     <div class="mb-3">
                         <label for="InputForName" class="form-label">Role</label>
-                        <input type="text" name="user_role" class="form-control" id="InputForName" value="<?= set_value('user_role') ?>">
+                        <select name="user_role" class="form-control" id="InputForRole">
+                            <option value="" disabled="">--Pilih Role--</option>
+                            <?php foreach($role as $r): ?>
+                            <option value="<?= $r['role_code'] ?>"><?= $r['role_name'] ?></option>
+                            <?php endforeach ?>
+                        </select>
                     </div>
                     <div class="mb-3">
                         <label for="InputForPassword" class="form-label">Password</label>

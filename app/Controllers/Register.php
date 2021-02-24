@@ -2,14 +2,25 @@
  
 use CodeIgniter\Controller;
 use App\Models\UserModel;
+use App\Models\RoleModel;
  
 class Register extends Controller
 {
+    protected $roleModel;
+    public function __construct(){
+        $this->roleModel = new RoleModel;
+    }
     public function index()
     {
         //include helper form
         helper(['form']);
-        $data = [];
+
+        $roleData = $this->roleModel->findAll();
+        //dd($roleData);
+        $data = [
+            'title' => 'Daftar',
+            'role' => $roleData,
+        ];
         echo view('register', $data);
     }
  

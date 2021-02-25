@@ -9,7 +9,7 @@
 				  <form class="form-inline" method="post" action="">
 				    <input class="form-control mr-sm-2" type="text" name="keyword" placeholder="Cari Data" aria-label="Search">
 				    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Cari</button>
-				    <!-- <a href="/DataPTK/create" class="btn btn-primary btn-md">Tambah Data</a> -->
+				    <a href="/alat/create" class="btn btn-primary btn-md">Tambah Data</a> 
 				  </form>
 				</nav>
 			</div>

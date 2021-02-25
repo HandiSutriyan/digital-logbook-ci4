@@ -11,7 +11,7 @@
 						<h4 class="title">Data Alat yang Dibawa</h4>
 						<h5 class="title">(Kode Peminjaman: <?= " ".$data_riwayat[0]['kode_pinjam'] ?>)</h5>
 						<small> <b>Peminjam:</b> <?= " ".$data_riwayat[0]['peminjam']." | " ?> <b>Tujuan:</b>  <?= " ".$data_riwayat[0]['tujuan']." | " ?> <b>Tanggal Pinjam:</b>  <?= " ".$data_riwayat[0]['created_at']." | " ?></small>
-						<p><a href="/pinjam/caririwayat" class="btn btn-warning btn-sm">Kembali</a></p>
+						<p><a href="/pinjam/kembalialat" class="btn btn-warning btn-sm">Kembali</a></p>
 					</div>
 					<div class="content">
                             <div class="form-group">
@@ -29,6 +29,7 @@
 									<tbody>
 										<?php 
 										$x=0;
+										if($data_riwayat):
 										foreach($data_riwayat as $dr): 
 											if($dr['kondisi_after'] == '' && $dr['kondisi_catatan'] == '' ):?>
 										<form method="post" action="/pinjam/kembalisave/<?= $dr['id_riwayat'] ?>">
@@ -58,7 +59,14 @@
 										<?php 
 											endif;
 										$x++;
-										endforeach ?>
+										endforeach;
+										else:?>
+											<tr>
+												<td colspan="4" class="	text-center text-muted">
+													SEMUA PERALATAN SUDAH DIKEMBALIKAN
+												</td>
+											</tr>
+										<?php endif?>
 									</tbody>
 								</table>
                             </div>
@@ -87,6 +95,53 @@
 								<a href="/pinjam" class="btn btn-warning btn-sm">Kembali</a>
 							</div>
 						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div class="card">
+					<div class="header">
+						<h4 class="title">Data Peminjaman Belum Kembali</h4>
+					</div>
+					<div class="content">
+                            <div class="form-group">
+							    <table class="table table-responsive">
+									<thead>
+										<tr>
+											<th>Kode Pinjam</th>
+											<th>Peminjam</th>
+											<th>Tujuan</th>
+											<th>Taggal Pinjam</th>
+										</tr>
+									</thead>
+									<tbody>
+										<?php 
+										$x=0;
+										if($data_kembali):
+											foreach($data_kembali as $dr): 
+												if($dr['kondisi_after'] == '' && $dr['kondisi_catatan'] == '' ):?>
+													<tr>
+														<td><?= $dr['kode_pinjam'] ?></td>
+														<td><?= $dr['peminjam'] ?></td>
+														<td><?= $dr['tujuan'] ?></td>
+														<td><?= $dr['created_at'] ?></td>	
+													</tr>
+												<?php 
+												endif;
+											$x++;
+											endforeach;
+										else:?>
+											<tr>
+												<td colspan="4" class="	text-center text-muted">
+													TIDAK ADA DATA PEMINJAMAN YANG BELUM KEMBALI
+												</td>
+											</tr>
+										<?php endif?>
+									</tbody>
+								</table>
+                            </div>
 					</div>
 				</div>
 			</div>

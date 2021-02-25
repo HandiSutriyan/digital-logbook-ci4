@@ -24,6 +24,10 @@ class RiwayatModel extends Model
 		return $data_alat;
 	}
 
+	public function groupData() {
+		return $this->table('riwayat')->groupBy("kode_pinjam")->paginate(10);
+	}
+
 	public function getTotalData(){
         return $this->table('riwayat')->groupBy("kode_pinjam")->countAllResults();
     }

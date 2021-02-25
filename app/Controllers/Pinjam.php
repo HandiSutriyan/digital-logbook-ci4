@@ -39,7 +39,8 @@ class Pinjam extends BaseController
         //dd($data_r);
         $data = [
             'title'=>'Pengembalian Alat',
-            'data_riwayat' => $data_r
+            'data_riwayat' => $data_r,
+            'data_kembali'=> ''
         ];
         return view('pages/peminjaman/kembali', $data);
     }
@@ -54,9 +55,11 @@ class Pinjam extends BaseController
     }
 
     public function kembaliAlat(){
+        $belumKembali = $this->riwayatModel->groupData();
         $data = [
-            'title'=>'Data Peminajaman',
+            'title'=>'Data Peminjaman',
             'data_riwayat' => '',
+            'data_kembali' => $belumKembali
         ];
         return view('pages/peminjaman/kembali', $data);
     }

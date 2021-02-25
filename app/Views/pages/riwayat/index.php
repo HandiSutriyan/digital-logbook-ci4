@@ -27,6 +27,7 @@
 							<table class="table table-hover table-striped">
 								<thead>
 									<th>No</th>
+									<th>Kode Pinjam</th>
 									<th>Nama</th>
 									<th>Merk</th>
 									<th>Tipe</th>
@@ -42,6 +43,7 @@
                                     ?>
                                         <tr class='clickable-row' data-href='/pinjam/pinjamalat/<?= $da['id'] ?>'>
                                             <td><?= $i ?></td>
+											<td><?= $da['kode_pinjam'] ?></td>
                                             <td><?= $da['alat_nama'] ?></td>
                                             <td><?= $da['alat_merek'] ?></td>
                                             <td><?= $da['alat_tipe'] ?></td>

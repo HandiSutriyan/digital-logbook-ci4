@@ -15,7 +15,7 @@
             </div>
 
             <ul class="nav">
-                <li class="<?= $title == "Dasbor" ? "active":""; ?>">
+                <li class="<?= $title == "Dashboard" ? "active":""; ?>">
                     <a href="<?= base_url('/dashboard');?>">
                         <i class="pe-7s-graph"></i>
                         <p>Dashboard</p>

@@ -63,7 +63,10 @@
 .img-table{
     width: 50px;
 }
-
+#kode_pinjam{
+    min-height: 250px;
+    text-align: center;
+}
 table > tbody > .clickable-row{
     cursor: pointer;
     background-color: red;

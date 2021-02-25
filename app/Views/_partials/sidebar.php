@@ -21,28 +21,22 @@
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <li class="<?= $title== "Peminjaman" ||"Pinjam Alat" || "Kembali Alat" ? "active":""; ?>">
+                <li class="<?= $title== "Peminjaman" || $title=="Pinjam Alat" || $title=="Kembali Alat" ? "active":""; ?>">
                     <a href="<?= base_url('/pinjam');?>">
                         <i class="pe-7s-culture"></i>
                         <p>Peminjaman</p>
                     </a>
                 </li>
-                <li class="<?= $title== "DataPTK"? "active":""; ?>"> 
-                    <a href="<?= base_url('/DataPTK');?>">
+                <li class="<?= $title== "Data Alat"? "active":""; ?>"> 
+                    <a href="<?= base_url('/alat');?>">
                         <i class="pe-7s-id"></i>
                         <p>Data Alat</p>
                     </a>
                 </li>
-                <li class="<?= $title== "Virtual Stand"? "active":""; ?>"> 
-                    <a href="<?= base_url('/virtualstand');?>">
+                <li class="<?= $title== "Data Riwayat"? "active":""; ?>"> 
+                    <a href="<?= base_url('/riwayat');?>">
                         <i class="pe-7s-display2"></i>
                         <p>Riwayat</p>
-                    </a>
-                </li>
-                <li class="<?= $title == "User"? "active":""; ?>">
-                    <a href="<?= base_url('/user');?>">
-                        <i class="pe-7s-user"></i>
-                        <p>User</p>
                     </a>
                 </li>
             </ul>

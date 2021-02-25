@@ -26,6 +26,7 @@ class Login extends Controller
                     'user_id'       => $data['user_id'],
                     'user_name'     => $data['user_name'],
                     'user_email'    => $data['user_email'],
+                    'user_role'    =>  $data['user_role'],
                     'logged_in'     => TRUE
                 ];
                 $session->set($ses_data);

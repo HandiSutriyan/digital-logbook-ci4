@@ -29,7 +29,7 @@ class Number extends BaseController
             'title' => 'Cek Data',
             'riwayat'=> $riwayat 
         ];
-        dd($riwayat);
+        //dd($riwayat);
         if($riwayat){
             return view('pages/number-input', $data);
         }else {

@@ -35,7 +35,7 @@
                             </div>
 							<div class="form-group">
 							    <input type="submit" name="simpan" class="btn btn-success btn-sm" value="Simpan">
-								<a href="/pinjam/pilihalat" class="btn btn-warning btn-sm">Kembali</a>
+								<a href="/pinjam" class="btn btn-warning btn-sm">Kembali</a>
 							</div>
 						</form>
 					</div>

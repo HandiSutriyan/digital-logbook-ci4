@@ -63,6 +63,7 @@ class Pinjam extends BaseController
 
     public function kembaliSave($id){
         //$id =  $this->request->getVar('riwayat_id');
+        $session = session();
         $edit = [
             'id_riwayat'=>$id,
             'id_alat'=> $this->request->getVar('id_alat'),
@@ -71,7 +72,8 @@ class Pinjam extends BaseController
             'kondisi_before'=> $this->request->getVar('kondisi_before'),
             'kondisi_after'=> $this->request->getVar('kondisi_after'),
             'kondisi_catatan'=> $this->request->getVar('kondisi_catatan'),
-            'kode_pinjam'=> $this->request->getVar('kode_pinjam')
+            'kode_pinjam'=> $this->request->getVar('kode_pinjam'),
+            'created_by'=> $session->get('user_role')
         ];
         //dd($edit);
         $this->riwayatModel->save($edit);
@@ -80,6 +82,8 @@ class Pinjam extends BaseController
     }
 
     public function save(){
+
+        $session = session();
         helper('text');
         $kode = random_string('alnum', 6);
         $id_alat= $this->request->getVar('id_alat');
@@ -92,7 +96,8 @@ class Pinjam extends BaseController
                 'kondisi_before'=> $this->request->getVar('kondisi_before'),
                 'kondisi_after'=> '',
                 'kondisi_catatan'=> '',
-                'kode_pinjam'=> $kode
+                'kode_pinjam'=> $kode,
+                'created_by'=> $session->get('user_role'),
             ];
             //dd($save);
             $this->riwayatModel->save($save);

@@ -19,7 +19,7 @@
 				<!-- TABEL -->
 				<div class="card">
 					<div class="header">
-                        <h4 class="title">Database Peralatan </h4>
+                        <h4 class="title">Database Riwayat </h4>
                     </div>
                     <div class="content">
                         
@@ -31,23 +31,28 @@
 									<th>Merk</th>
 									<th>Tipe</th>
 									<th>Serial Number</th>
-									<th>Aksi</th>
+                                    <th>Kondisi</th>
+                                    <th>Tanggal Kembali</th>
 								</thead>
 								<tbody>
                                     <?php 
                                     $i= 1;
-                                    foreach($data_alat as $da): ?>
+                                    foreach($data_riwayat as $da): 
+                                        if($da['kondisi_after'] !=''):
+                                    ?>
                                         <tr class='clickable-row' data-href='/pinjam/pinjamalat/<?= $da['id'] ?>'>
                                             <td><?= $i ?></td>
                                             <td><?= $da['alat_nama'] ?></td>
                                             <td><?= $da['alat_merek'] ?></td>
                                             <td><?= $da['alat_tipe'] ?></td>
                                             <td><?= $da['alat_sernum'] ?></td>
-                                            <td><?= '#' ?></td>
+                                            <td><?= $da['kondisi_after'] ?></td>
+                                            <td><?= $da['created_at'] ?></td>
                                         </tr>
                                     
                                     <?php 
-                                    $i++;
+                                        endif;
+                                        $i++;
                                     endforeach ?>
 								</tbody>
 							</table>

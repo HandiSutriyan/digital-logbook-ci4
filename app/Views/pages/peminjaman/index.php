@@ -12,10 +12,12 @@
                                     <hr>
                                     <div class="container-fluid">
                                         <div class="row">
-                                            <div class="col-md-12 text-center">
+                                            <div class="col-md-2"></div>
+                                            <div class="col-md-8 text-center">
                                                 <img class="img-responsive" src="assets/images/teknisi.jpg" style="max-width: 250px;">
                                                 <h5>Peminjaman</h5>
                                             </div>
+                                            <div class="col-md-2"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -29,10 +31,12 @@
                                 <hr>
                                 <div class="container-fluid">
                                     <div class="row">
-                                        <div class="col-md-12 text-center">
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-8 text-center">
                                             <img class="img-responsive" src="assets/images/admin.jpg" style="max-width: 250px;">
                                             <h5>Pengembalian</h5>
                                         </div>
+                                        <div class="col-md-2"></div>
                                     </div>
                                 </div>
                             </div>

@@ -19,6 +19,11 @@ class RiwayatModel extends Model
 		$data_riwayat ='';
 		$data_alat = $this->table('riwayat')->join('data_alat', 'data_alat.id = riwayat.id_alat', 'left')->where(['kode_pinjam'=> $kode_pinjam])->paginate(10);
 		return $data_alat;
+
 	}
+
+	public function getTotalData(){
+        return $this->table('riwayat')->groupBy("kode_pinjam")->countAllResults();
+    }
 
 }

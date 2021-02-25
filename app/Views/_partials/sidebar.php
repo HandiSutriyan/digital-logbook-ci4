@@ -10,19 +10,19 @@
     	<div class="sidebar-wrapper">
             <div class="logo">
                 <a href="<?= base_url('/dashboard');?>" class="simple-text">
-                    PTK Expo CMS
+                    Admin Logbook
                 </a>
             </div>
 
             <ul class="nav">
                 <li class="<?= $title == "Dasbor" ? "active":""; ?>">
-                    <a href="<?= base_url('/');?>">
+                    <a href="<?= base_url('/dashboard');?>">
                         <i class="pe-7s-graph"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <li class="<?= $title== "Jadwal" ? "active":""; ?>">
-                    <a href="<?= base_url('/jadwal');?>">
+                <li class="<?= $title== "Peminjaman" ||"Pinjam Alat" || "Kembali Alat" ? "active":""; ?>">
+                    <a href="<?= base_url('/pinjam');?>">
                         <i class="pe-7s-culture"></i>
                         <p>Peminjaman</p>
                     </a>

@@ -64,6 +64,11 @@
     width: 50px;
 }
 
+table > tbody > .clickable-row{
+    cursor: pointer;
+    background-color: red;
+}
+
 table > tbody > tr > td{
     vertical-align: middle;
 }

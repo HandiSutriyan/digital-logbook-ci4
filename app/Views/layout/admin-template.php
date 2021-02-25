@@ -5,12 +5,12 @@
 	<link rel="icon" type="image/png" href="admin-assets/img/favicon.ico">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title><?= $title; ?></title>
+	<title><?= SITE_NAME.'-'.$title; ?></title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
-    <link rel="shortcut icon" type="image/png" href="<?= base_url('favicon.ico')?>"/>
-
+    <link rel="shortcut icon" href="<?= base_url('/favicon.ico') ?>" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
     <!-- Bootstrap core CSS     -->
     <link href="<?= base_url('admin-assets/css/bootstrap.min.css'); ?>" rel="stylesheet" />
@@ -77,8 +77,6 @@
     <!-- Sweet Alert -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-   <!--  TinyMCE -->
-   <script src="<?= base_url('admin-assets/tinymce/js/tinymce/tinymce.min.js')?>"></script>
 
 
 	<script type="text/javascript">
@@ -100,19 +98,9 @@
                 enableTime: true,
                 dateFormat: "Y-m-d H:i",
             });
-
-            tinymce.init({
-                selector: 'textarea.editor',
-                height: 300,
-                plugins: [
-                  'advlist autolink link image lists charmap print preview hr anchor',
-                  'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
-                  'table emoticons template paste help'
-                ],
-                toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | ' +
-                  'bullist numlist outdent indent | link image | print preview media fullpage | ' +
-                  'forecolor backcolor emoticons | help'
-              });
+            $(".clickable-row").click(function() {
+                window.location = $(this).data("href");
+            });
 
     	});
 	</script>

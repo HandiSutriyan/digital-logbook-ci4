@@ -36,6 +36,8 @@ $routes->get('/', 'Home::index');
 $routes->get('/dashboard', 'Dashboard::index',['filter' => 'auth']);
 $routes->get('/logout', 'Login::logout');
 
+//$routes->get('/pinjam/pinjamalat/(:any)', 'Pinjam::pinjamalat/$1');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

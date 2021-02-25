@@ -12,7 +12,7 @@ function copyClip() {
   document.execCommand("copy");
 
   /* Alert the copied text */
-  alert("Copied the text: " + copyText.value);
+  alert("Menyalin teks: " + copyText.value);
 } 
 
 demo = {

@@ -6,7 +6,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-6">
-                        <a href="/pinjam/pilihalat">
+                        <a href="/pinjam/pinjamalat">
                             <div class="card">
                                 <div class="content">
                                     <hr>

@@ -40,7 +40,6 @@ class Riwayat extends Migration
 			'kode_pinjam'	=> [
 				'type'       => 'VARCHAR',
 				'constraint' => '6',
-				'unique'	=> true
 			],
 			'created_by'	=> [
 				'type'       => 'VARCHAR',

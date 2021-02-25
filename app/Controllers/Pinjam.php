@@ -29,13 +29,23 @@ class Pinjam extends BaseController
         return view('pages/peminjaman/data-alat', $data);
     }
     
-    public function pinjamAlat($id_alat){
-        $alat = $this->alatModel->getAlatbyId($id_alat);
+    public function pinjamAlat(){
+        //$alat = $this->alatModel->getAlatbyId($id_alat);
         $data =[
             'title' => 'Pinjam Alat',
-            'data_alat' => $alat
+            'data_alat' => ''
         ];
 		return view('pages/peminjaman/pinjam', $data);
+    }
+
+    public function kembaliAlat(){
+        $riwayatData = $this->riwayatModel->getAllData();
+        //dd($riwayatData);
+        $data = [
+            'title'=>'Data Peminajaman',
+            'data_riwayat' => $riwayatData
+        ];
+        return view('pages/peminjaman/kembali', $data);
     }
 
     public function save(){

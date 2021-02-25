@@ -13,7 +13,7 @@
                                     <h4 class="title">Peminjaman Berhasil</h4>
                                 </div>
                             <?php endif; ?>
-                                <p class="category"><?= $data_alat['alat_nama'].' '.$data_alat['alat_tipe'] ?></p>
+                                <p class="category"><?= $data_pinjam['tujuan']?></p>
                             </div>
                             <div class="content">
                                 <hr>
@@ -23,9 +23,8 @@
                                         </div>
                                         <div class="col-md-4 text-center">
                                             <h5>Kode Peminjaman</h5>
-                                            <h2 class="title mb-15"><?= $data_pinjam['kode_pinjam'] ?></h2>
-                                            <form class="my-20">
-                                                <input class="form-control-plaintext d-print-none" id="kode_pinjam" type="text" value="<?= $data_pinjam['kode_pinjam'] ?>" readonly style="display:none">
+                                            <form>
+                                                <input class="form-control-plaintext" id="kode_pinjam" type="text" value="<?= $data_pinjam['kode_pinjam'] ?>" readonly>
                                             </form>
                                         </div>
                                         <div class="col-md-4">

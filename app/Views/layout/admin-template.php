@@ -21,10 +21,13 @@
     <!--  Light Bootstrap Table core CSS    -->
     <link href="<?= base_url('admin-assets/css/light-bootstrap-dashboard.css?v=1.4.0')?>" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('admin-assets/css/bootstrap-select.css');?>">
 
 
     <!--  CSS for Demo Purpose, don't include it in your project     -->
     <link href="<?= base_url('admin-assets/css/demo.css') ?>" rel="stylesheet" />
+    
+
 
 
     <!--     Fonts and icons     -->
@@ -57,13 +60,10 @@
     <!--   Core JS Files   -->
     <script src="<?= base_url('admin-assets/js/jquery.3.2.1.min.js') ?>" type="text/javascript"></script>
 	<script src="<?= base_url('admin-assets/js/bootstrap.min.js')?>" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   
 
-	<!--  Charts Plugin 
-	<script src="<?= base_url('admin-assets/js/chartist.min.js')?>"></script>
-    -->
 
-    <!--  Notifications Plugin    -->
-    <script src="<?= base_url('admin-assets/js/bootstrap-notify.js')?>"></script>
 
     <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
 	<script src="<?= base_url('admin-assets/js/light-bootstrap-dashboard.js?v=1.4.0')?>"></script>
@@ -76,31 +76,23 @@
 
     <!-- Sweet Alert -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url('admin-assets/js/bootstrap-select.js');?>"></script>
 
 
 
 	<script type="text/javascript">
         
     	$(document).ready(function(){
-            /*
-        	demo.initChartist();
-
-        	$.notify({
-            	icon: 'pe-7s-gift',
-            	message: "Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for every web developer."
-
-            },{
-                type: 'info',
-                timer: 4000
-            });
-            */
+           
             $(".date-selector").flatpickr({
                 enableTime: true,
                 dateFormat: "Y-m-d H:i",
             });
+            $('.bootstrap-select').selectpicker();
             $(".clickable-row").click(function() {
                 window.location = $(this).data("href");
             });
+
 
     	});
 	</script>

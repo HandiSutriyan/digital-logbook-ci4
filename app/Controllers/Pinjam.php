@@ -29,40 +29,74 @@ class Pinjam extends BaseController
         return view('pages/peminjaman/data-alat', $data);
     }
     
+    public function cariRiwayat($kode = null){
+        if($kode){
+            $kode_pinjam = $kode;
+        }else{
+            $kode_pinjam = $kode = $this->request->getVar('kode_pinjam');
+        }
+        $data_r = $this->riwayatModel->search($kode);
+        //dd($data_r);
+        $data = [
+            'title'=>'Pengembalian Alat',
+            'data_riwayat' => $data_r
+        ];
+        return view('pages/peminjaman/kembali', $data);
+    }
+
     public function pinjamAlat(){
-        //$alat = $this->alatModel->getAlatbyId($id_alat);
+        $alat = $this->alatModel->findAll();
         $data =[
             'title' => 'Pinjam Alat',
-            'data_alat' => ''
+            'data_alat' => $alat
         ];
 		return view('pages/peminjaman/pinjam', $data);
     }
 
     public function kembaliAlat(){
-        $riwayatData = $this->riwayatModel->getAllData();
-        //dd($riwayatData);
         $data = [
             'title'=>'Data Peminajaman',
-            'data_riwayat' => $riwayatData
+            'data_riwayat' => '',
         ];
         return view('pages/peminjaman/kembali', $data);
+    }
+
+    public function kembaliSave($id){
+        //$id =  $this->request->getVar('riwayat_id');
+        $edit = [
+            'id_riwayat'=>$id,
+            'id_alat'=> $this->request->getVar('id_alat'),
+            'tujuan'=> $this->request->getVar('tujuan'),
+            'peminjam'=> $this->request->getVar('peminjam'),
+            'kondisi_before'=> $this->request->getVar('kondisi_before'),
+            'kondisi_after'=> $this->request->getVar('kondisi_after'),
+            'kondisi_catatan'=> $this->request->getVar('kondisi_catatan'),
+            'kode_pinjam'=> $this->request->getVar('kode_pinjam')
+        ];
+        //dd($edit);
+        $this->riwayatModel->save($edit);
+        return redirect()->to('/pinjam/caririwayat/'.$this->request->getVar('kode_pinjam'));
+        //return view('pages/peminjaman/kembali', $data);
     }
 
     public function save(){
         helper('text');
         $kode = random_string('alnum', 6);
+        $id_alat= $this->request->getVar('id_alat');
 
-        $save = [
-			'id_alat'=> $this->request->getVar('id_alat'),
-			'tujuan'=> $this->request->getVar('tujuan'),
-			'peminjam'=> $this->request->getVar('peminjam'),
-            'kondisi_before'=> $this->request->getVar('kondisi_before'),
-            'kondisi_after'=> '',
-            'kondisi_catatan'=> '',
-            'kode_pinjam'=> $kode
-		];
-		
-		$this->riwayatModel->save($save);
+		foreach($id_alat as $i){
+            $save = [
+                'id_alat' => $i,
+                'tujuan'=> $this->request->getVar('tujuan'),
+                'peminjam'=> $this->request->getVar('peminjam'),
+                'kondisi_before'=> $this->request->getVar('kondisi_before'),
+                'kondisi_after'=> '',
+                'kondisi_catatan'=> '',
+                'kode_pinjam'=> $kode
+            ];
+            //dd($save);
+            $this->riwayatModel->save($save);
+        }
         session()->setFlashdata('pesan','Data berhasil ditambahkan');
         $data_alat = $this->alatModel->getAlatbyId($save['id_alat']);
         $data=[

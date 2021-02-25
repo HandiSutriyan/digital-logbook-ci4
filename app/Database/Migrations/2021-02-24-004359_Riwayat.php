@@ -9,7 +9,7 @@ class Riwayat extends Migration
 	public function up()
 	{
 		$this->forge->addField([
-			'id'          => [
+			'id_riwayat'          => [
 				'type'           => 'INT',
 				'constraint'     => 5,
 				'unsigned'       => true,

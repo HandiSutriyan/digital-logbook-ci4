@@ -16,10 +16,12 @@ class RiwayatModel extends Model
 	}
 
 	public function search($kode_pinjam){
-		$data_riwayat ='';
 		$data_alat = $this->table('riwayat')->join('data_alat', 'data_alat.id = riwayat.id_alat', 'left')->where(['kode_pinjam'=> $kode_pinjam])->paginate(10);
 		return $data_alat;
-
+	}
+	public function searchById($id){
+		$data_alat = $this->table('riwayat')->join('data_alat', 'data_alat.id = riwayat.id_alat', 'left')->where(['id_alat'=> $id])->paginate(10);
+		return $data_alat;
 	}
 
 	public function getTotalData(){

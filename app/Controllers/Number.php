@@ -21,9 +21,13 @@ class Number extends BaseController
         ];
         return view('pages/number-input', $data);
     }
-    public function cari(){
+    public function cari($key = null){
         $session = session();
-        $kode = $this->request->getVar('kode_pinjam');
+        if($key){
+            $kode = $key;
+        }else{
+            $kode = $this->request->getVar('kode_pinjam');
+        }
         $riwayat = $this->riwayatModel->search($kode);
         $data =[
             'title' => 'Cek Data',
@@ -36,6 +40,16 @@ class Number extends BaseController
             $session->setFlashdata('msg', 'Data tidak ditemukan');
             return redirect()->to('/number');
         }
+    }
+
+    public function detail($kode,$id_alat){
+        $detail = $this->riwayatModel->searchById($id_alat);
+        $data = [
+            'title' => 'Riwayat Alat',
+            'last_code' => $kode,
+            'data_riwayat'=> $detail
+        ];
+        return view('pages/detail-alat', $data);
     }
     
 }

@@ -42,7 +42,7 @@
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8 text-center my-2">
-            <img class="img img-responsive" src="<?= base_url('assets/images/cari.jpg') ?>" alt="cari" width="500">
+            <img class="img-fluid mx-auto d-block" src="<?= base_url('assets/images/cari.jpg') ?>" alt="cari">
         </div>
         <div class="col-md-2"></div>
     </div>

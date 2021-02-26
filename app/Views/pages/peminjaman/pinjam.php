@@ -22,7 +22,7 @@
 							    <input type="text" class="form-control" name="peminjam" placeholder="Peminjam" required>
 							</div>
 							<div class="form-group">
-								<label class="col-sm-2 col-form-label">Alat-Alat yang Dipinjam</label>
+								<label class=" col-form-label">Alat-Alat yang Dipinjam</label>
 								<select class="bootstrap-select strings form-control" name="id_alat[]" data-width="100%" data-live-search="true" multiple required>
 									<?php foreach ($data_alat as $row) :?>
 										<option value="<?php echo $row['id'];?>"><?php echo $row['alat_nama']." ".$row['alat_tipe'];?></option>

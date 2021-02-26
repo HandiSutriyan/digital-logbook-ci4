@@ -15,7 +15,7 @@ class AlatSeeder extends Seeder
                         'alat_merek' => 'Fluke',
                         'alat_tipe'    => '719100G',
                         'alat_sernum' => '3185162',
-                        'alat_kategori' => 'pj_tkn',
+                        'alat_kategori' => 'pj_tk',
                         'created_at' => Time::now(),
                         'updated_at' => Time::now()
                     ],
